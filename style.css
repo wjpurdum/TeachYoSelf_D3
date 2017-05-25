@@ -17,3 +17,7 @@
   font: 10px sans-serif;
   text-anchor: end;
 }
+
+div {
+  padding-left: 50px
+}

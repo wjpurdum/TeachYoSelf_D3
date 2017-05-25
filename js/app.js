@@ -6,8 +6,8 @@ function visualizeOranges() {
   // Target the div ('canvas') where our data will be displayed. Set its height and width.
   var canvas = d3.select(".orangeContainer")
     .append("svg")
-    .attr("width", 768)
-    .attr("height", 1024)
+    .attr("width", 1000)
+    .attr("height", 300)
 
     // set a variable for your shapes or representations. This will apply to all circles within the SVG
   var oranges = canvas.selectAll("circle")
@@ -33,8 +33,8 @@ function visualizeOranges() {
     var redData = [30, 78, 67, 120]
     var canvas = d3.select(".redContainer")
     .append("svg")
-    .attr("width", 800)
-    .attr("height", 1030)
+    .attr("width", 2000)
+    .attr("height", 200)
 
     var reds = canvas.selectAll("circle")
     .data(redData)
@@ -51,3 +51,27 @@ function visualizeOranges() {
       return d;
     })
 }
+
+function executeCities(){
+  console.log("cities running")
+  var data = [
+     { name:"Ireland",  income:53000, life: 78, pop:6378, color: "green"},
+     { name:"Norway",   income:73000, life: 87, pop:5084, color: "blue" },
+     { name:"Tanzania", income:27000, life: 50, pop:3407, color: "grey" }
+  ];
+// Create SVG container
+  var svg = d3.select("#hook").append("svg")
+        .attr("width", 800)
+        .attr("height", 400)
+        .style("background-color", "#D0D0D0");
+// Create SVG elements from data
+    var cities = svg.selectAll("circle")                  // create virtual circle template
+      .data(data)                            // bind data
+      .enter()                                 // for each row in data...
+      .append("circle")                      // bind circle & data row such that...
+        .attr("id", function(d) { return d.name })           // set the circle's id according to the country name
+        .attr("cx", function(d) { return d.income /180  })  // set the circle's horizontal position according to income
+        .attr("cy", function(d) { return d.life })           // set the circle's vertical position according to life expectancy
+        .attr("r",  function(d) { return d.pop /180 *2 })   // set the circle's radius according to country's population
+        .attr("fill",function(d){ return d.color });         // set the circle's color according to country's color
+      }
