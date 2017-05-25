@@ -2,6 +2,7 @@ function visualizeOranges() {
   // This data will determine the size of our "oranges" that we will display
   var orangeData = [10, 30, 50, 100]
 
+
   // Target the div ('canvas') where our data will be displayed. Set its height and width.
   var canvas = d3.select(".orangeContainer")
     .append("svg")
@@ -20,11 +21,33 @@ function visualizeOranges() {
     .attr("cx", function(d, i){
       return d + (i * 100)
     })
+    // Define y axis of a circle
     .attr("cy", function(d){
       return d;
     })
+    // Define radius of circle
     .attr("r", function (d){
       return d;
     })
-      // Define y axis of a circle
+
+    var redData = [30, 78, 67, 120]
+    var canvas = d3.select(".redContainer")
+    .append("svg")
+    .attr("width", 800)
+    .attr("height", 1030)
+
+    var reds = canvas.selectAll("circle")
+    .data(redData)
+    .enter()
+    .append("circle")
+    .attr("fill", "red")
+    .attr("cx", function(d, i){
+      return d + (i*200)
+    })
+    .attr("cy", function(d, i){
+      return d;
+    })
+    .attr("r", function(d){
+      return d;
+    })
 }
