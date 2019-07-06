@@ -1,7 +1,7 @@
 D3 (Data-Driven Documents) is a JavaScript library (think JQuery!) that relies on manipulation of DOM elements and SVG to render dynamic graphs and charts.
 
 Why did you choose this subject?
-I used Chart.JS in a previous project because I felt that D3 was too complex for the basic data visualization I wnated to do. Now that I've completed most of the WDI course, I felt like I was in a better position to try it again and understand it.
+I used Chart.JS in a previous project because I felt that D3 was too complex for the basic data visualization I wanted to do. Now that I've completed most of the WDI course, I felt like I was in a better position to try it again and understand it.
 
 How were you first made aware of it?
 Through research on different data visualization libraries. It's one of the most well known.
